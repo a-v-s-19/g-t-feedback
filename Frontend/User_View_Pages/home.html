@@ -1,0 +1,210 @@
+<section ng-controller="Home_Page">
+    <div class="section_2 container-fluid mt-2" style="font-family:'Cantata One', serif;">
+        <div class="row">
+          <div class="col-6 s1 text-center">
+            <div class="d-flex flex-wrap pb-0">
+              <div class="d1">C</div>
+              <div class="align-self-center d2 mt-4">HOOSE</div>
+              <div class="d3">The Right One..</div>
+            </div>
+            </div>
+            <div class="col-6 s3 pt-2">
+              <div class="ratio ratio-16x9 s3 bg-secondary">
+                <iframe src="https://youtu.be/w15pCPU2-cA" title="YouTube video" allowfullscreen></iframe>
+              </div>
+            </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-6 s2 rounded-4">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner rounded-4">
+                <div class="carousel-item active d1 rounded-4">
+                  <img src="../Images/WhatsApp Image 2023-01-09 at 20.14.50.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item d1 rounded-4">
+                  <img src="../Images/WhatsApp Image 2023-01-09 at 18.32.32 (1).jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item d1 rounded-4">
+                  <img src="../Images/WhatsApp Image 2023-01-09 at 20.14.55.jpeg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container section_3 d-flex">
+      <div class="d1 w-50 ml-5 text-wrap mt-5 text-center">Give Your Feedback For Products and Places<br>
+        <button type="button" ng-click="CheckLogin()"  class="btn btn-* text-white fw-bold btn-lg mt-3">Give Feedback</button>
+      </div>
+      <div class="mt-5">
+        <div class="row d2 text-center border-bottom pb-2 border-3 border-light">
+          Upload Reviews in Text And Image Format
+        </div>
+        <div class="row mt-3">
+          <table class="table d3">
+            <thead>
+              <tr>
+                <td scope="col"><i class="fas fa-check-circle f"></i></td>
+                <td scope="col" class="t fw-semibold">Create Your Own Review & Post</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row"><i class="fas fa-check-circle f"></i></td>
+                <td scope="row" class="t fw-semibold">Increase Your Subscribers</td>
+              </tr>
+              <tr>
+                <td scope="row"><i class="fas fa-check-circle f"></i></td>
+                <td scope="row" class="t fw-semibold">Get Your Rewards</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="section_4 container-fluid">
+       <div class="fw-semibold fs-3 px-4 w-100 py-1 text-white" style="opacity:1;background-color:#09778d; font-family:'Cantata One', serif;">Recommended For You</div>
+       <div class="mt-4 d-flex overflow-auto mx-2" style="background-color:#09778d;">
+        <div class="card col-4 mx-2 my-3 text-white" ng-repeat="r in getReview track by $index" style="width: 18rem; background-color: #015b6d;">
+          <img ng-src="http://localhost:4000/images/{{r.im1}}" height="250" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{r.Product_Name}}</h5>
+          </div>
+          <div class="card-body d-inline-flex">
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal2"  ng-click="Get(r.buy_now)" class="card-link btn btn-sm text-white fw-semibold" style="
+              background: rgb(255,255,255);
+              background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(173,115,0,1) 5%, rgba(177,92,0,1) 95%, rgba(255,255,255,1) 100%);
+              font-family:'Cantata One', serif;">Buy Now</button>
+            <button ng-click="See_Review($index)" class="card-link btn btn-sm text-white fw-semibold" style="background-color:#0096f3;font-family:'Cantata One', serif;">See Reviews</button>
+            <button ng-click="CheckLogin()" class="card-link btn btn-sm text-white fw-semibold" style="background-color:#2f7415;font-family:'Cantata One', serif;">Give Feedback</button>
+          </div>
+        </div>
+       </div>
+    </div>
+    <div class="section_5 container-fluid">
+      <div class="fw-semibold fs-3 px-4 w-100 py-1 text-white mt-4" style="opacity:1;background-color:#09778d; font-family:'Cantata One', serif;"><div class="row"><div class="col-3">See The User's Review</div><div class="col-6"><div class="border-bottom border-3 border-light py-1 mt-2"></div></div><div class="col-3">Take Your Decisions</div></div></div>
+    </div>
+        <div class="container-fluid sec mt-4">
+            <div style="background-color: #09778d;font-family:'Cantata One', serif;">
+                <div class="s2">
+                  <div class="border border-start-0 border-end-0 border-top-0 border-2 border-light">
+                    <div class="d-flex py-2 ms-3">
+                    <img ng-src="http://localhost:4000/images/{{ran_uimage}}" class="rounded-circle im1" alt="">
+                    <button class="px-2 fs-5 rounded-2 fw-bold text-white ms-2 btn" type="button" ng-click="randomBtn()" ng-content="random_data"style="font-family:'Cantata One', serif;background-color: #015b6d;">{{ran_uname}}</button>
+                    <div class="btn btn-outline-primary border border-light border-2 text-white rounded-circle fs-6 fw-normal ms-2" ng-hide="sbs" ng-click="Subs()">Subscribe</div>
+                    <div class="btn btn-outline-success border border-light border-2 text-white rounded-circle fs-6 fw-normal ms-2" ng-hide="unsbs" ng-click="UnSubs()">Unsubscribe</div>
+                    <button class="btn btn-outline-primary border border-2 justify-self-center text-white border-light ms-auto me-3 rounded-circle fw-normal fs-6 p-2" type="submit" ng-click="ViewPost()">View Post</button>
+                    </div>
+                  </div>
+                  <div class="my-2 d2 row">
+                    <div class="col-6">
+                    <div class="text-white text-start ms-3 fs-5 fw-semibold">Images</div>
+                    <div class="overflow-auto ms-2 d2" style="background-color: #015b6d;">
+                      <div  class="text-white my-3" style="height:320px;">
+                        <div class="d-flex justify-content-evenly">
+                          <img ng-src="http://localhost:4000/images/{{i1}}" alt="" width="150" height="150" class="rounded-3 border border-2 border-light">
+                          <img ng-src="http://localhost:4000/images/{{i2}}" alt="" width="150" height="150" class="rounded-3 border border-2 border-light">
+                          <img ng-src="http://localhost:4000/images/{{i3}}" alt="" width="150" height="150" class="rounded-3 border border-2 border-light">
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                          <img ng-src="http://localhost:4000/images/{{i4}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light">
+                          <img ng-src="http://localhost:4000/images/{{i5}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light">
+                          <img ng-src="http://localhost:4000/images/{{i6}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light">
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-6">
+                    <div class="text-white text-start ms-3 fs-5 fw-semibold">See the results</div>
+                    <div class="me-2 d2 overflow-auto" style="background-color: #015b6d;">
+                      <div class="text-white py-3" style="height:352px;">
+                        <div class="d-flex text-white ms-2"><p class="px-2 fw-semibold fs-5">Product Name :</p><p class="ms-1 px-2 rounded-2" style="background-color:#015b6d;">{{pn}}</p></div>
+                        <div class="d-flex text-white ms-2"><p class="px-2 fw-semibold fs-5">Review Title :</p><p class="ms-1 px-2 rounded-2" style="background-color:#015b6d;">{{rt}}</p></div>
+                        <div class="ms-2 me-2 text-white border border-2 border-light overflow-auto" style="height:230px;" ><p class="p-2">{{review}}</p></div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="mt-3">
+                    <form>
+                    <div class="input-group mb-3 w-50 d-flex">
+                      <input type="text" class="form-control ms-2" placeholder="Write Comments" aria-label="Comments" aria-describedby="basic-addon1" ng-model="u_comment">
+                      <button class="px-2 fs-6 rounded-2 fw-normal text-white ms-2 btn" type="submit" ng-click="SaveComment()" ng-content="random_data"style="font-family:'Cantata One', serif;background-color: #015b6d;">Save</button>
+                    </div>
+                    </form>
+                    <div style="background-color: #015b6d;" class="p-1" ng-repeat="c in comm track by $index">
+                      <div class="d-flex py-2 ms-3">
+                        <div class="px-2 fs-6 rounded-2 fw-normal text-white ms-5 d-flex" style="font-family:'Cantata One', serif;background-color: #015b6d;">
+                          <div>{{c.comm}}</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="px-2 fs-6 rounded-2 fw-normal text-white ms-5 d-flex pb-2" style="font-family:'Cantata One', serif;background-color: #015b6d;" ng-hide="co">
+                    <div class="d-flex p-2">{{nocomm}}</div>
+                  </div>
+                </div>
+                <div class="d-flex py-3 border-top border-2 border-light">
+                  <button class="btn btn-outline-primary text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-hide="like" ng-click="likebtn()" type="submit">Like</button>
+                  <button class="btn btn-primary ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-hide="liked" ng-click="unlikebtn()">Liked</button>
+                  <button class="btn btn-outline-primary text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-click="Comment()" type="submit">Comments</button>
+                  <button class="btn btn-outline-success text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="submit">Buy Now</button>
+                  <button class="btn btn-outline-secondary border-light text-white ms-auto me-2 fw-semibold fs-5 p-2 rounded-3" ng-click="SeeMoreReviews()" type="submit">See More Reviews</button>
+                </div>
+          </div>
+        </div>
+
+        <div class="section_6 container-fluid mt-2 pb-3">
+
+           <div class="row mt-2">
+              <div class="col-12">
+                <div class="fw-semibold fs-3 px-4 w-100 py-1 text-white mt-2" style="opacity:1;background-color:#09778d; font-family:'Cantata One', serif;">About Us</div>
+                <div class="text-center"><div class="fw-semibold fs-5 px-4 py-1 text-white mt-3 rounded-2" style="opacity:1;background-color:#09778d; font-family:'Cantata One', serif;">
+                  Most of people are buying products from online like e-markets and e-commerce platforms. Reviews are a key part of the buying process. When customers compare products or services, they often choose the ones that have more positive reviews. A lack of reviews makes buyers feel increased risk, which makes them less likely to buy.
+                  Before purchasing anything, it is a normal human behavior to do a survey on that product. Based on reviews, customers can compare different brands and can finalize a product of their interest. These online reviews can change the opinion of a customer about the product.
+                  Thus, we are here with a G&T feedback which is a website of different product review to give a genuine review of the product. 
+                  
+                  We provide a platform where people can rate and review products. In our site you can find reallife experiences and opinions.</div></div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
+                <div class="fw-semibold fs-3 px-4 w-100 py-1 text-white mt-2" style="opacity:1;background-color:#09778d; font-family:'Cantata One', serif;">Disclaimer</div>
+                <div class="text-center"><div class="fw-semibold fs-5 px-4 py-1 text-white mt-3 rounded-2" style="opacity:1;background-color:#09778d; font-family:'Cantata One', serif;">All third party trademarks, images and copyrights on this page are used for purpose of comparative advertising, criticism or review. This is a public forum presenting user opinions on selected products and businesses and such views expressed donot reflect opinion of our site.</div></div>
+              </div>
+           </div>
+        </div>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                            <div>Click On The Link</div>
+                            <div>{{buy}}</div>                            
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                            <div>Click On The Link</div>
+                            <div>{{buynow}}</div>                            
+              </div>
+            </div>
+          </div>
+        </div> 
+        </section>

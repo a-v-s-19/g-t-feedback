@@ -1,0 +1,56 @@
+<section ng-controller="feedbackform_page" class="my-3">
+    <div class="container" style="font-family:'Cantata One', serif;">
+            <form action="" class="mt-2 rounded-2" style="background-color:#09778d;">
+        <div class="row">
+            <div class="col-6 mt-2 rounded-4 border-bottom border-end border-2 border-light">
+                <div class="fs-5 bold ms-2 my-2 ps-2 py-2 rounded-2 d-flex" style="font-family:'Cantata One', serif;color:#014755;"><label for="pn" class="text-white">Product Name</label><input type="text" ng-model="product_name" class="form-control ms-3 text-white" style="width:70%;background-color:#015b6d;" id="pn" aria-label="Username" aria-describedby="basic-addon1"></div>
+                <div class="mb-3 ms-2 rounded-2">
+                    <div class="fs-5 bold my-2 ps-2 py-2 rounded-2 d-flex" style="font-family:'Cantata One', serif;color:#014755;"><label for="pn" class="text-white">Review Title</label><input type="text" ng-model="review_title" class="form-control ms-4 text-white" style="width:70%;background-color:#015b6d;" id="pn" aria-label="Username" aria-describedby="basic-addon1"></div>
+                    <div class="p-2"><textarea class="form-control border-2 border-light text-white" placeholder="Write Your Review Here" style="background-color:#014755;" id="exampleFormControlTextarea1" rows="10" ng-model="textreview"></textarea></div>
+                  </div>
+            </div>
+            <div class="col-6 mt-2 rounded-4 border-bottom border-start border-2 border-light">
+                <div class="fs-5 bold text-white me-2 mt-1 ps-2 pb-2 rounded-2" style="font-family:'Cantata One', serif;color:#014755;">Upload Images & Give Feedback</div>
+                <div class="">
+                <div class="d-flex pb-2">
+                    <div><input class="form-control text-white" type="file" style="background-color: #014755;" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg" onchange="angular.element(this).scope().uploadFile(event)"></div>
+                    <button class="btn border border-1 border-light text-white ms-2" ng-hide="up1"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                    <button class="btn btn-success ms-2"  ng-hide="upd1" value="Upload" type="button">Uploaded</button>
+                </div>
+                <div class="d-flex pb-2">
+                    <div><input class="form-control text-white" type="file" style="background-color: #014755;" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg" onchange="angular.element(this).scope().uploadFile(event)"></div>
+                    <button class="btn border border-1 border-light text-white ms-2" ng-hide="up2"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                    <button class="btn btn-success ms-2"  ng-hide="upd2" value="Upload" type="button">Uploaded</button>
+
+                </div>
+                <div class="d-flex pb-2">
+                    <div><input class="form-control text-white" type="file" style="background-color: #014755;" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg" onchange="angular.element(this).scope().uploadFile(event)"></div>
+                    <button class="btn border border-1 border-light text-white ms-2" ng-hide="up3"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                    <button class="btn btn-success ms-2"  ng-hide="upd3" value="Upload" type="button">Uploaded</button>
+                </div>
+                <div class="d-flex pb-2">
+                    <div><input class="form-control text-white" type="file" style="background-color: #014755;" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg" onchange="angular.element(this).scope().uploadFile(event)"></div>
+                    <button class="btn border border-1 border-light text-white ms-2" ng-hide="up4"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                    <button class="btn btn-success ms-2"  ng-hide="upd4" value="Upload" type="button">Uploaded</button>
+                </div>
+                <div class="d-flex pb-2">
+                    <div><input class="form-control text-white" type="file" style="background-color: #014755;" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg" onchange="angular.element(this).scope().uploadFile(event)"></div>
+                    <button class="btn border border-1 border-light text-white ms-2" ng-hide="up5"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                    <button class="btn btn-success ms-2"  ng-hide="upd5" value="Upload" type="button">Uploaded</button>
+                </div>
+                <div class="d-flex pb-2">
+                    <div><input class="form-control text-white" style="background-color: #014755;" type="file" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg" onchange="angular.element(this).scope().uploadFile(event)"></div>
+                    <button class="btn border border-1 border-light text-white ms-2" ng-hide="up6"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                    <button class="btn btn-success ms-2"  ng-hide="upd6" value="Upload" type="button">Uploaded</button>
+                </div>
+                </div>
+                <div class="fs-5 bold text-white me-2 mt-1 ps-2 pb-2 rounded-2" style="font-family:'Cantata One', serif;color:#014755;">Paste The Buy Now URL from (flipkart , Myntra , amazon etc.)</div>
+                <div class="pe-3"><input type="text" ng-model="buy_now_link" class="form-control text-white w-100 py-2" style="background-color:#015b6d;" id="pn" aria-label="Username" aria-describedby="basic-addon1"></div>
+            </div>
+            </div>
+        </div>
+        <div class="mt-3 text-center"><button type="submit" ng-click="saveReview()" class="btn btn-primary mb-3 px-4 py-3">Upload Feedback</button></div>
+    </form>
+    </div>
+</section>
+

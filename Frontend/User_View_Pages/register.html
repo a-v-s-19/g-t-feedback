@@ -1,0 +1,36 @@
+<section ng-controller="register_page" class="my-5 text-white" style="background-color:#09778d; width:35%;margin-left:32.5%">
+    <div class="pb-5 pt-4">
+     <div class="d-flex justify-content-evenly">
+         <a type="button" class="btn btn-primary btn-lg" href="#!login_page">Sign In</a>
+         <a type="button" class="btn btn-primary btn-lg" href="#!register">Register</a>
+     </div>
+     <div class="border-bottom border-2 border-light mt-4"></div>
+     <div class="fs-5 semibold text-center text-white mt-2">Or</div>
+     <div><button type="button" class="btn btn-primary mt-2" style="width:70%;margin-left:15%;">Sign in with Google</button></div>
+     <div class="mt-4" style="width:80%;margin-left:10%;">
+         <form class="needs-validation" novalidate>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon4"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Enter Your Name" aria-label="text" aria-describedby="basic-addon4" required ng-model="U_Name">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon5"><i class="fas fa-phone-square"></i></span>
+                <input type="tel" pattern="^[6-9][0-9]{9}$" class="form-control" placeholder="Enter Mobile Number" aria-label="mobile" aria-describedby="basic-addon5" required ng-model="U_Contact">
+            </div>
+             <div class="input-group mb-3">
+                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                 <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="email" aria-describedby="basic-addon1" required ng-model="U_Email">
+             </div>
+             <div class="input-group mb-3">
+                 <span class="input-group-text" id="basic-addon2"><i class="fas fa-key"></i></span>
+                 <input type="password" class="form-control" placeholder="Enter Password" aria-label="password" aria-describedby="basic-addon2" required ng-model="U_Pass">
+             </div>
+             <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3"><i class="fas fa-key"></i></span>
+                <input type="password" class="form-control" placeholder="Re-Enter Password" aria-label="password" aria-describedby="basic-addon3" required ng-model="U_RePass">
+            </div>
+             <button type="submit" class="btn btn-primary w-100" ng-click="SaveUserData()">Register</button>
+           </form> 
+     </div>
+    </div>
+ </section>

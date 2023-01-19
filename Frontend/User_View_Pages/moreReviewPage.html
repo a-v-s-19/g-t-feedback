@@ -1,0 +1,65 @@
+<section ng-controller="moreReviewController" class="pb-3">
+  <div ng-repeat="ran in random_usr track by $index" class="container-fluid sec mt-4" style="font-family:'Cantata One', serif;">
+    <div style="background-color: #09778d;" ng-init="Get($index)">
+        <div class="s2">
+          <div class="border border-start-0 border-end-0 border-top-0 border-2 border-light">
+            <div class="d-flex py-2 ms-3">
+            <img ng-src="http://localhost:4000/images/{{ran.U_Image}}" class="rounded-circle im1" alt="">
+            <button class="px-2 fs-5 rounded-2 fw-bold text-white ms-2 btn" ng-click="profile(ran.U_Name)" style="font-family:'Cantata One', serif;background-color: #015b6d;">{{ran.U_Name}}</button>
+            <div class="btn btn-outline-primary border border-light border-2 text-white rounded-circle fs-6 fw-normal ms-2" ng-hide="sbs" ng-click="Subs()">Subscribe</div>
+            <div class="btn btn-outline-success border border-light border-2 text-white rounded-circle fs-6 fw-normal ms-2" ng-hide="unsbs" ng-click="UnSubs()">Unsubscribe</div>
+            <button class="btn btn-outline-primary border border-2 justify-self-center text-white border-light ms-auto me-3 rounded-circle fw-normal fs-6 p-2" ng-click="ViewPost()" type="submit">View Post</button>
+            </div>
+          </div>
+          <div class="my-2 d2 row">
+            <div class="col-6">
+            <div class="text-white text-start ms-3 fs-5 fw-semibold">Images</div>
+            <div class="overflow-auto ms-2 d2" style="background-color: #015b6d;">
+              <div  class="text-white my-3" style="height:320px;">
+                <div class="d-flex justify-content-evenly">
+                  <img ng-src="http://localhost:4000/images/{{i1}}" alt="" width="150" height="150" class="rounded-3 border border-2 border-light">
+                  <img ng-src="http://localhost:4000/images/{{i2}}" alt="" width="150" height="150" class="rounded-3 border border-2 border-light">
+                  <img ng-src="http://localhost:4000/images/{{i3}}" alt="" width="150" height="150" class="rounded-3 border border-2 border-light">
+                </div>
+                <div class="d-flex justify-content-evenly">
+                  <img ng-src="http://localhost:4000/images/{{i4}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light">
+                  <img ng-src="http://localhost:4000/images/{{i5}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light">
+                  <img ng-src="http://localhost:4000/images/{{i6}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light">
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="text-white text-start ms-3 fs-5 fw-semibold">See the results</div>
+            <div class="me-2 d2 overflow-auto" style="background-color: #015b6d;">
+              <div class="text-white py-3" style="height:351px;">
+                <div class="d-flex text-white ms-2"><p class="px-2 fw-semibold fs-5">Product Name :</p><p class="ms-1 px-2 rounded-2" style="background-color:#015b6d;">{{pn}}</p></div>
+                <div class="d-flex text-white ms-2"><p class="px-2 fw-semibold fs-5">Review Title :</p><p class="ms-1 px-2 rounded-2" style="background-color:#015b6d;">{{rt}}</p></div>
+                <div class="ms-2 me-2 text-white border border-2 border-light" style="height:230px;" ><p class="p-2">{{review}}</p></div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex py-3 border-top border-2 border-light">
+          <button class="btn btn-outline-primary text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-hide="like" ng-click="likebtn()" type="submit">Like</button>
+          <button class="btn btn-primary ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-hide="liked" ng-click="unlikebtn()">Liked</button>
+          <button class="btn btn-outline-primary text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" type="submit">Comments</button>
+          <button class="btn btn-outline-success text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="submit">Buy Now</button>
+        </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                    <div>Click On The Link</div>
+                    <div>{{buy}}</div>                            
+      </div>
+    </div>
+  </div>
+</div> 
+</section>

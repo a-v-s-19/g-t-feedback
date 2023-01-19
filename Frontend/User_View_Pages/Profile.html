@@ -1,0 +1,233 @@
+ <div class="container mt-3 pb-3" ng-controller="ProfileCon">
+    <div class="" style="background-color: #09778d; font-family: 'Cantata One', serif;">
+        <div class="row py-3">
+            <div class="col-4 border-end border-light border-2">
+                <div class="text-center"><img ng-src="http://localhost:4000/images/{{user_img}}" alt="" width="150" height="150" class="mt-3 rounded-3 border border-2 border-light"></div>
+                <div><p class="text-white text-start ms-3 fs-5 fw-semibold mt-3">About</p></div>
+                <div class="text-white rounded-2 ms-3 p-2" style="height:100px; background-color:#015b6d ;">{{user_about}}</div>
+                <div class="ms-3 mt-3">
+                    <div class="list-group border border-1 border-light">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn list-group-item list-group-item-action text-white" style="background-color: #015b6d;" aria-current="true">Edit Profile</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="button" class="btn list-group-item list-group-item-action text-white" style="background-color: #09778d;">Change Password</a>
+                        <a href="#!feedback" type="button" class="btn list-group-item list-group-item-action text-white" style="background-color: #015b6d;">Upload Reviews</a>
+                        <div class="dropdown">
+                            <a href="#" class="list-group-item list-group-item-action text-white d-flex" data-bs-toggle="dropdown" style="background-color: #09778d;">Settings<i class="fas fa-chevron-down ms-auto"></i></a>
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0 w-100">
+                                <button ng-click="DeleteUser()" class="btn dropdown-item">Delete My Account</button>
+                                <a href="#" class="dropdown-item">Privacy Settings</a>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-8">
+                 <div class="fs-3 fw-semibold text-white ms-4 mt-3">{{user_name}}</div>
+                 <div class="fs-5 fw-normal text-white mx-4 pb-4">{{user_email}}</div>
+                 <div class="border border-2 border-light mx-4 rounded-2 " style="background-color: #015b6d;">
+                 <div class="row mt-3">
+                    <div class="col-4 text-center d-flex justify-content-center"><div class="fs-5 fw-semibold px-2 py-1 rounded-1 text-white">{{cou}}</div></div>
+                    <div class="col-4 text-center d-flex justify-content-center"><div class="fs-5 fw-semibold px-2 py-1 rounded-1 text-white">53</div></div>
+                    <div class="col-4 text-center d-flex justify-content-center"><div class="fs-5 fw-semibold px-2 py-1 rounded-1 text-white">345</div></div>
+                 </div>
+                 <div class="row pb-3">
+                    <div class="col-4 text-center"><div class="fs-5 fw-normal text-white">Post</div></div>
+                    <div class="col-4 text-center"><div class="fs-5 fw-normal text-white">Subscriber</div></div>
+                    <div class="col-4 text-center"><div class="fs-5 fw-normal text-white">Subscribed</div></div>
+                 </div>
+                 </div>
+                 <div class="fs-5 fw-normal text-white mx-4 mt-4 pb-2">Recent Posts</div>
+                 <div ng-hide="no_post" class="mx-4 my-2 text-white fs-6 fw-normal"><p>No Post Uploaded</p>
+                  <a href="#!feedback" type="button" class="btn border border-2 border-light text-white">Upload Reviews</a>
+                </div>
+                 <div class="overflow-auto" style="height:500px;">
+                 <div class="border border-2 mx-4 my-2 rounded-2" ng-repeat="r in Reviews track by $index">
+                    <div class="container-fluid sec pb-1">
+                        <div style="background-color: #09778d;">
+                            <div class="s2">
+                              <div class="border border-start-0 border-end-0 border-top-0 border-2 border-light">
+                                <div class="d-flex justify-content-between py-2 ms-3">
+                                <button type="submit" ng-click="ViewPost($index)" class="btn btn-outline-primary text-white ms-2 border border-2 border-light rounded-circle fw-normal fs-6 p-2 rounded-3">View Post</button>
+                                </div>
+                              </div>
+                              <div class="d2 row pb-2">
+                                <div class="col-6">
+                                <div class="text-white text-start ms-3 fs-5 fw-semibold">Images</div>
+                                <div class="mt-1 ms-2 d2 rounded-2" style="background-color: #015b6d;">
+                                  <div  class="rounded-2 py-3">
+                                    <div class="d-flex justify-content-evenly">
+                                      <img ng-src="http://localhost:4000/images/{{r.im1}}" alt="" width="90" height="90" class="rounded-3 border border-2 border-light">
+                                      <img ng-src="http://localhost:4000/images/{{r.im2}}" alt="" width="90" height="90" class="rounded-3 border border-2 border-light">
+                                      <img ng-src="http://localhost:4000/images/{{r.im3}}" alt="" width="90" height="90" class="rounded-3 border border-2 border-light">
+                                    </div>
+                                    <div class="d-flex justify-content-evenly">
+                                      <img ng-src="http://localhost:4000/images/{{r.im4}}" alt="" width="90" height="90" class="mt-3 rounded-3 border border-2 border-light">
+                                      <img ng-src="http://localhost:4000/images/{{r.im5}}" alt="" width="90" height="90" class="mt-3 rounded-3 border border-2 border-light">
+                                      <img ng-src="http://localhost:4000/images/{{r.im6}}" alt="" width="90" height="90" class="mt-3 rounded-3 border border-2 border-light">
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                <div class="text-white text-start ms-3 fs-5 fw-semibold">See the results</div>
+                                <div class="mt-1 me-2 pb-2 d2 text-break rounded-2" style="background-color:#015b6d;">
+                                  <div class="d-flex text-white"><p class="px-2 fw-semibold fs-6">Product Name :</p><p class="ms-1 px-2 rounded-2" style="background-color:#015b6d;">{{r.Product_Name}}</p></div>
+                                  <div class="d-flex text-white"><p class="px-2 fw-semibold fs-6">Review Title :</p><p class="ms-1 px-2 rounded-2" style="background-color:#015b6d;">{{r.Review_Title}}</p></div>
+                                  <div class="ms-2 me-2 text-white border border-2 border-light" style="height:140px;" ><p class="p-2">{{r.TextReview}}</p></div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                 </div>
+                 </div>
+            </div>
+        </div>
+    </div>  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row flex-lg-nowrap w-100">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col mb-3">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="e-profile">
+                                <form action="">
+                                <div class="row">
+                                  <div class="col-12 col-sm-auto mb-3">
+                                    <div class="mx-auto" style="width: 140px;">
+                                      <div class="d-flex justify-content-evenly align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                                        <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">User Name</h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                      <div class="mt-2">
+                                        <div class="d-flex">
+                                          <input class="btn btn-outline-primary" type="file" placeholder="Change Photo" accept="image/png, image/gif, image/jpeg"onchange="angular.element(this).scope().uploadFile(event)">
+                                        <button class="btn btn-primary"  ng-click="uploadImage()" value="Upload" type="button">Upload pic</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </form>
+                                <ul class="nav nav-tabs">
+                                  <li class="nav-item"><a href="" class="active nav-link">Edit details</a></li>
+                                </ul>
+                                <form>
+                                <div class="tab-content pt-3">
+                                  <div class="tab-pane active">
+                                      <div class="row">
+                                        <div class="col">
+                                          <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>Full Name</label>
+                                                <input class="form-control" type="text" required name="name" ng-model="user_name" >
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>Email</label>
+                                                <input class="form-control" type="email" required ng-model="user_email">
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col">
+                                                <div class="form-group">
+                                                  <label>Phone number</label>
+                                                  <input class="form-control" type="tel" required ng-model="user_contact">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          <div class="row">
+                                            <div class="col mb-3">
+                                              <div class="form-group">
+                                                <label>About</label>
+                                                <textarea class="form-control" rows="5" placeholder="My Bio" ng-model="user_about"></textarea>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col d-flex justify-content-start">
+                                          <button class="btn btn-primary" type="submit" ng-click="UpdateUser()" data-bs-dismiss="modal" aria-label="Close">Save Changes</button>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </form>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                                                       <div class="row">
+                                        <div class="col-12 col-sm-6 mb-3">
+                                            <form action="">
+                                          <div class="mb-2"><b>Change Password</b></div>
+                                          <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>Current Password</label>
+                                                <input class="form-control" type="password" placeholder="••••••••••••••••••••" ng-model="current_pass">
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>New Password</label>
+                                                <input class="form-control" type="password" placeholder="••••••••••••" ng-model="new_pass">
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                                <input class="form-control" type="password" placeholder="••••••" ng-model="confirm_pass"></div>
+                                            </div>
+                                          </div>
+                                          <div class="row mt-3">
+                                            <div class="col d-flex justify-content-start">
+                                              <button class="btn btn-primary" type="submit" ng-click="ChangePassword()" data-bs-dismiss="modal" aria-label="Close">Change Password</button>
+                                            </div>
+                                          </div>
+                                          </form>
+                                        </div>
+                                      
+                                      </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+</div>

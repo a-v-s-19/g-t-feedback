@@ -1,0 +1,39 @@
+<section ng-controller="viewPost_Ctr">
+    <div class="w-75 my-4" style="margin-left:12.5%;font-family:'Cantata One', serif;">
+        <div class="mt-1 me-2 pb-2 d2 text-break rounded-2" style="background-color:#015b6d;">
+        <div class="d-flex text-white"><p class="px-2 fw-semibold fs-4">Product Name :</p><p class="ms-1 px-2 rounded-2 fw-normal fs-5" style="background-color:#015b6d;">{{p_name}}</p></div>
+        <div class="d-flex text-white"><p class="px-2 fw-semibold fs-4">Review Title :</p><p class="ms-1 px-2 rounded-2 fw-normal fs-5" style="background-color:#015b6d;">{{r_title}}</p></div>
+        <div class="ms-2 me-2 mt-3 text-white border border-2 border-light" style="height:200px;" >
+            <div class="fw-semibold fs-4 mx-3 my-1">Images</div>
+            <div class="d-flex justify-content-evenly mx-3">
+                <img ng-src="http://localhost:4000/images/{{i1}}" alt="" width="140" height="140" class="rounded-3 border border-2 border-light">
+                <img ng-src="http://localhost:4000/images/{{i2}}" alt="" width="140" height="140" class="rounded-3 border border-2 border-light">
+                <img ng-src="http://localhost:4000/images/{{i3}}" alt="" width="140" height="140" class="rounded-3 border border-2 border-light">
+                <img ng-src="http://localhost:4000/images/{{i4}}" alt="" width="140" height="140" class="rounded-3 border border-2 border-light">
+                <img ng-src="http://localhost:4000/images/{{i5}}" alt="" width="140" height="140" class="rounded-3 border border-2 border-light">
+                <img ng-src="http://localhost:4000/images/{{i6}}" alt="" width="140" height="140" class="rounded-3 border border-2 border-light">
+              </div>
+       </div>
+        <div class="ms-2 me-2 mt-3 text-white border border-2 border-light" style="height:180px;" ><p class="p-2">{{textreview}}</p></div>
+        <div class="d-flex py-3">
+        <button class="btn btn-outline-primary text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-click="likebtn()" ng-hide="like" type="submit">Like</button>
+        <button class="btn btn-primary ms-3 border-light fw-semibold fs-5 p-2 rounded-3" ng-hide="liked" ng-click="unlikebtn()">Liked</button>
+        <button class="btn btn-outline-primary text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" type="submit">Comments</button>
+        <button class="btn btn-outline-success text-white ms-3 border-light fw-semibold fs-5 p-2 rounded-3" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="submit">Buy Now</button>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                          <div>Click On The Link</div>
+                          <div>{{buy}}</div>                            
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

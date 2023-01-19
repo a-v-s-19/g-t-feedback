@@ -1,0 +1,20 @@
+body{
+ background-color: #8acfdd;
+}
+@media screen and (min-width:992px) {
+   .section_1 .bg{background-color: #09778d;}
+   .section_2{height:350px;}
+   .section_2 .d1{font:bold 150px 'Cantata One', serif;}
+   .section_2 .d2{font:bold 90px 'Cantata One', serif;}
+   .section_2 .d3{font:bold 52px 'Cantata One', serif;margin:-35px 0 0 10px;}
+   .section_2 .s1{height:198px;}
+   .section_2 .s2{height:152px;margin-top:-145px;}
+   .section_2 .s2 .d1{height:152px;}.section_2 .s2 img{height:152px;width: auto;}
+   .section_2 .s3{height:350px;}
+   .section_3 .d1{font:bold 40px 'Cantata One', serif;}
+   .section_3 .btn{background-color:#0096f3;}.section_3 .d2{font:bold 28px 'Cantata One', serif;}
+   .section_3 .d3 .t{font:25px 'Cantata One', serif;}.section_3 .d3 .f{font-size:xx-large;color:#2b9801;}
+   .sec .s2{}
+   .sec .s2 .im1{height:40px;width:40px;}
+   .sec .s2 .d2{} 
+}

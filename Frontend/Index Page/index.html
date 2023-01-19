@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" ng-app="User_Module">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="../CSS/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <script src="../CSS/bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Angular js/angular.js"></script>
+    <script src="../Angular js/route.js"></script>
+    <script src="../Angular js/User.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/mycss.css">
+  </head>
+  <body ng-controller="main_controller">
+    <div class="section_1 text-white">
+      <nav class="navbar navbar-expand-lg bg">
+        <div class="container">
+          <a class="navbar-brand text-white" href="#">
+            <img src="../Images/Picsart_23-01-05_01-16-49-490.png" alt="" width="50" height="50">
+            G&T FeedBack
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex w-100 justify-content-center" role="search">
+                  <input class="form-control me-2 w-50 px-3 py-2 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light rounded-pill" type="submit">Search</button>
+                </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item d-flex">
+                <a class="nav-link  text-white active mb-2" aria-current="page" href="#!home"><i class="fas fa-home mt-2">Home</i></a>
+              </li>
+              <li class="nav-item d-inline-flex" ng-hide="loginbtn">
+                <a class="nav-link  text-white active mb-2" href="#!login_page"><i class="fas fa-user-circle mt-2">Login</i></a>
+              </li>
+              <div class="nav-item active dropdown px-2" ng-hide="profile">
+                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" ng-src="http://localhost:4000/images/{{user_img}}" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">{{userName}}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#!Profile" class="dropdown-item">My Profile</a>
+                    <a href="#" class="dropdown-item" ng-click="Logout()">Log Out</a>
+                </div>
+            </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="ng-view">
+
+    </section>
+<div class="container-fluid my-2">
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color:#09778d;">
+    <div class="container p-4 pb-0">
+      <section class="">
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              G&T FeedBack
+            </h6>
+            <p>
+              We provide a platform where people can rate and review products. 
+              In our site you can find reallife experiences and opinions.
+            </p>
+          </div>
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a class="text-white">Login</a>
+            </p>
+            <p>
+              <a class="text-white">Give FeedBack</a>
+            </p>
+            <p>
+              <a class="text-white">See Reviews</a>
+            </p>
+          </div>
+          <hr class="w-100 clearfix d-md-none" />
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> RTC Institute Of Technology, Ranchi</p>
+            <p><i class="fas fa-envelope mr-3"></i> g&tfeedback@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 919304908096</p>
+            <p><i class="fas fa-print mr-3"></i> + 917488105678</p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #3b5998"
+               href="#!"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #55acee"
+               href="#!"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #dd4b39"
+               href="#!"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #ac2bac"
+               href="#!"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #0082ca"
+               href="#!"
+               role="button"
+               ><i class="fab fa-linkedin-in"></i
+              ></a>
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #333333"
+               href="#!"
+               role="button"
+               ><i class="fab fa-github"></i
+              ></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >MDBootstrap.com</a
+        >
+    </div>
+  </footer>
+</div>
+  </body>
+</html>
