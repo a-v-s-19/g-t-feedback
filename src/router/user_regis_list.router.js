@@ -1,0 +1,18 @@
+const express=require('express');
+const app=express();
+const router=express.Router();
+const usercontroller=require('../controller/user_resgis_list.controller');
+router.get('/test',usercontroller.user_registration_list);
+router.get('/id/:U_ID',usercontroller.user_registration_list_by_U_ID);
+router.post('/insert',usercontroller.saveUserRegisData);
+router.get('/email/:U_Email',usercontroller.User_Registration_List_By_Email);
+router.get('/logindata/email/:U_Email/pass/:U_Pass',usercontroller.Login_User_By_Email_Pass);
+router.put('/updateUser/id/:U_ID',usercontroller.UpdateUserDetailsBy_ID);
+router.get('/randomUser',usercontroller.getRandomUser);
+router.get('/random_Users/id/:U_ID',usercontroller.getRandom_Users);
+router.get('/name/:U_Name',usercontroller.User_Registration_List_By_Name);
+router.post('/saveImage',usercontroller.getImage);
+router.put('/ChangeUserPass/id/:U_ID',usercontroller.ChangePasswordBy_ID);
+router.put('/uploadPath/id/:U_ID',usercontroller.saveUserImage);
+router.get('/deleteUser/id/:U_ID',usercontroller.DeleteUser_By_ID);
+module.exports=router;

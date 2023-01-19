@@ -1,0 +1,65 @@
+const reviewde=require("../model/review.model");
+
+exports.saveUserReview=(req,res)=>{
+    const userreview=new reviewde(req.body);
+    reviewde.saveReview(userreview,(err,review)=>{
+        if(err){
+            console.log("Invalid data",err);
+            res.send(err);
+        }else{
+            console.log(review);
+            res.json({Message:"Success",UserReview:review});
+        }
+    })
+}
+exports.getReview_By_R_ID=(req,res)=>{
+    reviewde.getreviewByRID(req.params.R_ID,(err,reviewbyR_ID)=>{
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(reviewbyR_ID);
+            res.json({Message:"Success",Review:reviewbyR_ID});
+        }
+    })
+}
+exports.getReview=(req,res)=>{
+    reviewde.getreview((err,review)=>{
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            res.json({Message:"Success",Review:review});
+        }
+    })
+}
+exports.getUserReviewBy_ID=(req,res)=>{
+    reviewde.getReviewByID(req.params.U_ID,(err,reviewres)=>{
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            res.json({Message:"Success",ReviewResponse:reviewres});
+        }
+    })
+}
+exports.CountReviewBy_ID=(req,res)=>{
+    reviewde.CountReviewsbyID(req.params.U_ID,(err,CountRes)=>{
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            res.json({Message:"Success",CountResponse:CountRes})
+        }
+    })
+}
+exports.ReviewBy_P_Name=(req,res)=>{
+    reviewde.reviewbyP_Name(req.params.Product_Name,(err,review)=>{
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            res.json({Message:"Success",ReviewRes:review})
+        }
+    })
+}

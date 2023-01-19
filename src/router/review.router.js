@@ -1,0 +1,10 @@
+const express=require('express');
+const router=express.Router();
+const reviewcontroller=require("../controller/review.controller");
+router.get('/get',reviewcontroller.getReview);
+router.post('/savereview',reviewcontroller.saveUserReview);
+router.get('/getreview/id/:U_ID',reviewcontroller.getUserReviewBy_ID);
+router.get('/getReviewCount/id/:U_ID',reviewcontroller.CountReviewBy_ID);
+router.get('/getreviewbyR_ID/:R_ID',reviewcontroller.getReview_By_R_ID);
+router.get('/review/p_name/:Product_Name',reviewcontroller.ReviewBy_P_Name);
+module.exports=router;
